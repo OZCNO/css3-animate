@@ -1,7 +1,10 @@
 body {
-  background: #123522;
+  background: #161616;
   font: 12px normal Verdana, Arial, Helvetica, sans-serif;
 }
+
+
+/*第一个动画*/
 h1.loadingtext{
 	text-align: center;
 	text-transform: uppercase;
@@ -77,5 +80,171 @@ h1.loadingtext span:nth-child(7) {
 @-webkit-keyframes letters {
   to {
     text-shadow: 0 0 2px rgba(22, 22, 22, 0.2), 0 0 3px rgba(0, 0, 0, 0.02), 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+
+/*第二个动画*/
+#ajaxloader1 {
+  width: 30px;
+  height: 30px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 25px 2px;
+  -moz-box-shadow: 0 0 25px 2px;
+  box-shadow: 0 0 25px 2px;
+  /*color: #fff;*/
+  border-color: #f00;
+  color: #cc0000;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  -webkit-animation: spin-right 1s linear 0s infinite normal;
+  -moz-animation: spin-right 1s linear 0s infinite normal;
+  -ms-animation: spin-right 1s linear 0s infinite normal;
+  animation: spin-right 1s linear 0s infinite normal;
+  margin: 30px auto 0;
+}
+#ajaxloader1:after {
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin: 3px;
+  border: 6px solid #f00;
+  content: " ";
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+@keyframes spin-right {
+  from {
+    transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  /*此处设置了完全不透明，有一种亮起来的感觉*/
+  50% {
+    transform: rotate(180deg);
+    opacity: 1.0;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 0.2;
+  }
+}
+@-moz-keyframes spin-right {
+  from {
+    -moz-transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    -moz-transform: rotate(180deg);
+    opacity: 1.0;
+  }
+  to {
+    -moz-transform: rotate(360deg);
+    opacity: 0.2;
+  }
+}
+@-webkit-keyframes spin-right {
+  from {
+    -webkit-transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    opacity: 1.0;
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/*第三个动画，内圈逆时针，外圈顺时针*/
+#ajaxloader2 {
+  margin: 30px auto 0;
+}
+#ajaxloader2 .outer {
+  border: 5px solid rgba(0, 183, 229, 0.9);
+  opacity: .9;
+  width: 50px;
+  height: 50px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 35px rgba(0, 61, 76, 0.9);
+  -moz-box-shadow: 0 0 35px rgba(0, 61, 76, 0.9);
+  box-shadow: 0 0 35px rgba(0, 61, 76, 0.9);
+  -webkit-animation: spin-right 0.85s linear 0s infinite normal;
+  -moz-animation: spin-right 0.85s linear 0s infinite normal;
+  -ms-animation: spin-right 0.85s linear 0s infinite normal;
+  animation: spin-right 0.85s linear 0s infinite normal;
+
+  margin: 0 auto;
+}
+#ajaxloader2 .inner {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 5px solid rgba(0, 183, 229, 0.9);
+  opacity: .9;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-box-shadow: 0 0 35px rgba(0, 61, 76, 0.9);
+  -moz-box-shadow: 0 0 35px rgba(0, 61, 76, 0.9);
+  box-shadow: 0 0 35px rgba(0, 61, 76, 0.9);
+  /*相对自己定位*/
+  position: relative;
+  top: -50px;
+  margin: 0 auto;
+  -webkit-animation: spin-left 0.85s linear infinite normal;
+  -moz-animation: spin-left 0.85s linear infinite normal;
+  -ms-animation: spin-left 0.85s linear infinite normal;
+  animation: spin-left 0.85s linear infinite normal;
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay: 0;
+  animation-delay: 0;
+}
+@keyframes spin-left {
+  from {
+    transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: rotate(-180deg);
+    opacity: 1.0;
+  }
+  to {
+    transform: rotate(-360deg);
+    opacity: 0.2;
+  }
+}
+@-moz-keyframes spin-left {
+  from {
+    -moz-transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    -moz-transform: rotate(-180deg);
+    opacity: 1.0;
+  }
+  to {
+    -moz-transform: rotate(-360deg);
+    opacity: 0.2;
+  }
+}
+@-webkit-keyframes spin-left {
+  from {
+    -webkit-transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    -webkit-transform: rotate(-180deg);
+    opacity: 1.0;
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+    opacity: 0.2;
   }
 }
